@@ -1,0 +1,159 @@
+
+# ENTITIES
+
+# SKILLS
+[[entities]]
+	type = "carpenter"
+	cls = "skill"
+
+[[entities]]
+	type = "laborer"
+	cls = "skill"
+
+[[entities]]
+	type = "plumber"
+	cls = "skill"
+
+# RESOURCES
+[[entities]]
+	type = "wood"
+	cls = "resource"
+
+[[entities]]
+	type = "stone"
+	cls = "resource"
+
+[[entities]]
+	type = "brick"
+	cls = "resource"
+
+# STRUCTURES
+
+[[entities]]
+	type = "house"
+	cls = "structure"
+	[[entities.cost]]
+		type = "wood"
+		units = 100
+	[[entities.work]]
+		type = "carpenter"
+		work = 15
+	[[entities.work]]
+		type = "laborer"
+		work = 50
+	[[entities.work]]
+		type = "plumber"
+		work = 10
+	powers = ["permanent_housing"]
+
+[[entities]]
+	type = "school"
+	cls = "structure"
+	[[entities.cost]]
+		type = "brick"
+		units = 100
+	[[entities.cost]]
+		type = "wood"
+		units = 100
+	[[entities.work]]
+		type = "laborer"
+		work = 100
+	[[entities.work]]
+		type = "carpenter"
+		work = 30
+	[[entities.work]]
+		type = "plumber"
+		work = 20
+	powers = ["train_laborer", "train_carpenter", "train_plumber"]
+
+# TERRAIN
+
+[[entities]]
+	type = "road"
+	cls = "terrain"
+	[[entities.cost]]
+		type = "stone"
+		units = 35
+	[[entities.work]]
+		type = "laborer"
+		work = 35
+
+# POWERS
+[[powers]]
+	type = "train_laborer"
+	powers = ["train"]
+	[[powers.cost]]
+		type = "adult"
+		qty = 1
+	[[powers.work]]
+		type = "laborer"
+		units = 25
+	[[powers.output]]
+		type = "laborer"
+
+[[powers]]
+	type = "train_carpenter"
+	powers = ["train_skilled_labor"]
+	[[powers.output]]
+		type = "carpenter"
+
+[[powers]]
+	type = "train_plumber"
+	powers = ["train_skilled_labor"]
+	[[powers.output]]
+		type = "plumber"
+		
+
+[[powers]]
+	type = "train_skilled_labor"
+	powers = ["train"]
+	[[powers.cost]]
+		type = "laborer"
+		qty = 1
+
+[[powers]]
+	type = "train"
+
+[[powers]]
+	type = "work"
+
+# STARTING INVENTORY
+[[inventory]]
+	type = "road"
+	qty = 25
+
+[[inventory]]
+	type = "house"
+	qty = 5
+
+[[inventory]]
+	type = "school"
+	qty = 1
+
+[[inventory]]
+	type = "laborer"
+	qty = 5
+
+[[inventory]]
+	type = "adult"
+	qty = 25
+
+[[inventory]]
+	type = "plumber"
+	qty = 1
+
+[[inventory]]
+	type = "carpenter"
+	qty = 1
+
+[[inventory]]
+	type = "stone"
+	qty = 1000
+
+[[inventory]]
+	type = "wood"
+	qty = 1000
+
+[[inventory]]
+	type = "brick"
+	qty = 1000
